@@ -10,10 +10,9 @@ jobs:
       - image: cimg/ruby:2.5-node
     steps:
       - checkout
-      - ruby/install-deps
-      - node/install-packages:
-            pkg-manager: yarn
-            cache-key: "yarn.lock"
+      - run:
+        name: Install bundle
+        command: bundle install
 
 workflows:
   version: 2
